@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLAMA Talent Partners | Selección de Talento en Venezuela</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d131a;
+            --card-bg: #131b24;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-light: #e0e6ed;
+            --text-muted: #94a3b8;
+            --border-gold: rgba(212, 175, 55, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(13, 19, 26, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        /* IMAGEN DEL LOGO */
+        .brand-logo img {
+            height: 48px;
+            width: auto;
+            border-radius: 6px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .brand-subtitle {
+            font-size: 0.65rem;
+            color: var(--gold-light);
+            letter-spacing: 3px;
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--gold-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Metrics Grid */
+        .metrics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .metric-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Content Sections */
+        .section-title {
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            margin: 4rem 0 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-gold);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .info-card h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Contact & Footer */
+        footer {
+            margin-top: 5rem;
+            background: #080c10;
+            border-top: 1px solid var(--border-gold);
+            padding: 3rem 5% 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="#" class="brand-logo">
+            <!-- Coloca aquí la imagen descargada con el nombre logo.png -->
+            <img src="logo.png" alt="LLAMA Talent Partners Logo">
+            <div class="brand-text">
+                <span class="brand-title">LLAMA</span>
+                <span class="brand-subtitle">Talent Partners</span>
+            </div>
+        </a>
+        <nav>
+            <a href="#mision">Misión</a>
+            <a href="#vision">Visión</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Conectamos tu Talento con las Mejores Oportunidades</h1>
+        <p>Impulsamos el crecimiento profesional en Venezuela mediante un enfoque personalizado y centrado en el candidato.</p>
+
+        <div class="metrics-container">
+            <div class="metric-card">
+                <h3>Oportunidades Únicas</h3>
+                <p>Acceso a vacantes exclusivas en empresas líderes.</p>
+            </div>
+            <div class="metric-card">
+                <h3>Match Estratégico</h3>
+                <p>Conexión precisa según tu perfil y potencial.</p>
+            </div>
+            <div class="metric-card">
+                <h3>Alcance Nacional</h3>
+                <p>Liderazgo y presencia en toda Venezuela.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="grid-2" id="mision">
+        <div class="info-card">
+            <h2>Misión</h2>
+            <p>Impulsar tu carrera profesional conectándote con las mejores empresas y oportunidades del mercado, basándonos en tu talento y potencial único.</p>
+        </div>
+        <div class="info-card" id="vision">
+            <h2>Visión</h2>
+            <p>Ser la plataforma líder en empoderamiento profesional en Venezuela, transformando la búsqueda de empleo en una experiencia personalizada, exitosa y satisfactoria para cada candidato.</p>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <h2 style="font-family: 'Cinzel', serif; color: var(--gold-primary); margin-bottom: 1rem;">Contacto</h2>
+            <p><strong>Email:</strong> llamatalentpartners@gmail.com</p>
+            <p><strong>Instagram & Facebook:</strong> @llamatalentpartners</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 LLAMA Talent Partners. Todos los derechos reservados. Venezuela.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
